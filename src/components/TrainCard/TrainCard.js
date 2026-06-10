@@ -44,11 +44,7 @@ const TrainCard = ({ train, customActionBtn }) => {
       
 <div className="train-card__left">
 <div className="train-card__train-icon-box">
-  <img 
-    src="/images/train-icon.png" 
-    alt="Поезд" 
-    className="train-card__main-icon-img" 
-  />
+<img src={`${process.env.PUBLIC_URL}/images/train-icon.png`} alt="поезд" />
 </div>
   <h4 className="train-card__train-name">{departure.train.name}</h4>
   <div className="train-card__train-route">
