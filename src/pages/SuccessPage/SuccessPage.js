@@ -4,12 +4,12 @@ import { clearSeats } from '../../store/slices/seatsSlice';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-
+import { useNavigate } from 'react-router-dom';
 import './SuccessPage.css';
 
 const SuccessPage = () => {
   const dispatch = useDispatch();
-
+  
   const { user } = useSelector((state) => state.order);
   const { selectedSeats } = useSelector((state) => state.seats);
   const { passengers } = useSelector((state) => state.passengers);
@@ -21,8 +21,8 @@ const SuccessPage = () => {
   const [hoverRating, setHoverRating] = useState(0);
 
   const handleGoHome = () => {
-    dispatch(clearSeats());
-    window.location.href = '/'; 
+  dispatch(clearSeats());
+  navigate('/');
   };
 
   return (
