@@ -1,0 +1,31 @@
+name: React CI
+
+on:
+  push:
+    branches: [ "master", "main" ]
+  pull_request:
+    branches: [ "master", "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+    - name: Скачиваем код репозитория
+      uses: actions/checkout@v3
+
+    - name: Устанавливаем Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Устанавливаем зависимости
+      run: npm ci
+
+    - name: Проверяем, что проект собирается без ошибок
+      run: npm run build --if-present
