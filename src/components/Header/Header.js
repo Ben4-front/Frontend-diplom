@@ -1,8 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+
+  const handleScroll = (id) => {
+    if (location.pathname === '/') {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <header className="header">
       <div className="header__logo-container">
@@ -12,16 +33,40 @@ const Header = () => {
       <nav className="header__nav">
         <ul className="header__menu">
           <li className="header__menu-item">
-            <Link to="/#about" className="header__menu-link">О нас</Link>
+            <span 
+              onClick={() => handleScroll('about')} 
+              className="header__menu-link" 
+              style={{ cursor: 'pointer' }}
+            >
+              О нас
+            </span>
           </li>
           <li className="header__menu-item">
-            <Link to="/#how-it-works" className="header__menu-link">Как это работает</Link>
+            <span 
+              onClick={() => handleScroll('how-it-works')} 
+              className="header__menu-link" 
+              style={{ cursor: 'pointer' }}
+            >
+              Как это работает
+            </span>
           </li>
           <li className="header__menu-item">
-            <Link to="/#reviews" className="header__menu-link">Отзывы</Link>
+            <span 
+              onClick={() => handleScroll('reviews')} 
+              className="header__menu-link" 
+              style={{ cursor: 'pointer' }}
+            >
+              Отзывы
+            </span>
           </li>
           <li className="header__menu-item">
-            <Link to="/#contacts" className="header__menu-link">Контакты</Link>
+            <span 
+              onClick={() => handleScroll('contacts')} 
+              className="header__menu-link" 
+              style={{ cursor: 'pointer' }}
+            >
+              Контакты
+            </span>
           </li>
         </ul>
       </nav>
