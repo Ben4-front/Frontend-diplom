@@ -87,7 +87,6 @@ const Footer = () => {
       <div className="footer__bottom">
         <div className="footer__logo">Лого</div>
         <button className="footer__scroll-up" onClick={scrollToTop} aria-label="Наверх">
-          <img src={`${process.env.PUBLIC_URL}/images/arrow-up.png`} alt="Наверх" onError={(e) => e.target.style.display='none'} />
           <span className="arrow-text">↑</span>
         </button>
         <div className="footer__copyright">2018 WEB</div>
