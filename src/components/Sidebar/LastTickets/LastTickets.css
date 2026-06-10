@@ -1,0 +1,114 @@
+.last-tickets {
+  margin-top: 20px;
+}
+
+.last-tickets__title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #292929;
+  margin: 0 0 20px 0;
+}
+
+.last-tickets__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.last-ticket-card {
+  background: #fff;
+  border: 1px solid #c4c4c4;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.last-ticket-card__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.last-ticket-card__city {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.last-ticket-card__city--right {
+  text-align: right;
+}
+
+.last-ticket-card__city-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #292929;
+  margin-bottom: 5px;
+}
+
+.last-ticket-card__station {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #928f94;
+}
+
+.last-ticket-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.last-ticket-card__icons {
+  display: flex;
+  gap: 10px;
+}
+
+.last-ticket-card__price-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.last-ticket-card__price-prefix {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #928f94;
+}
+
+.last-ticket-card__price {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffa800;
+}
+
+.last-ticket-card__currency {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #928f94;
+}
+
+.last-tickets__loading {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #928f94;
+  text-align: center;
+  padding: 20px;
+}
+
+.last-ticket-card__icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.last-tickets__feature-icon {
+  width: 16px;
+  height: 16px;
+  color: #c4c4c4;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+

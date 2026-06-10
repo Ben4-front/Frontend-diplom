@@ -1,0 +1,242 @@
+.passenger-form {
+  background-color: #FFFFFF;
+  border: 1px solid #928F94;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  font-family: 'Roboto', sans-serif;
+}
+
+.passenger-form__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 25px;
+  border-bottom: 1px dashed #928F94;
+}
+
+.passenger-form__header--active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.passenger-form__header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.passenger-form__toggle-btn {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #FFA800;
+  border-radius: 50%;
+  background: transparent;
+  color: #FFA800;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.passenger-form__title {
+  font-weight: 700;
+  font-size: 30px;
+  color: #292929;
+  margin: 0;
+}
+
+.passenger-form__delete {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #928F94;
+  cursor: pointer;
+}
+
+.passenger-form__body {
+  padding: 30px 25px;
+}
+
+.passenger-form__row {
+  margin-bottom: 30px;
+}
+
+.passenger-form__row--grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.passenger-form__row--grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  max-width: 600px;
+}
+
+.passenger-form__row--docs {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.passenger-form__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.passenger-form__input-group label {
+  font-size: 16px;
+  color: #928F94;
+}
+
+.passenger-form__input-group input,
+.passenger-form__select {
+  border: 1px solid #928F94;
+  border-radius: 3px;
+  padding: 12px 15px;
+  font-size: 18px;
+  color: #292929;
+  outline: none;
+}
+
+.passenger-form__select--small {
+  max-width: 280px;
+}
+
+.passenger-form__input-group input.input-error {
+  border: 1px solid #FF3D00;
+  background-color: rgba(255, 61, 0, 0.1);
+}
+
+.passenger-form__gender-toggle {
+  display: flex;
+}
+
+.gender-btn {
+  border: 1px solid #928F94;
+  background: transparent;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gender-btn:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.gender-btn:last-child {
+  border-radius: 0 3px 3px 0;
+  border-left: none;
+}
+
+.gender-btn.active {
+  background-color: #FFA800;
+  border-color: #FFA800;
+  color: #FFFFFF;
+}
+
+.passenger-form__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: #292929;
+  cursor: pointer;
+}
+
+.passenger-form__divider {
+  border-bottom: 1px dashed #928F94;
+  margin: 30px 0;
+}
+
+.doc-type { width: 280px; }
+.doc-series { width: 150px; }
+.doc-number { width: 200px; }
+.doc-number-full { width: 350px; }
+
+.passenger-form__footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 30px;
+  position: relative;
+}
+
+.passenger-form__error-banner,
+.passenger-form__success-banner {
+  position: absolute;
+  left: -25px;
+  right: 250px;
+  padding: 15px 25px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 3px;
+}
+
+.passenger-form__error-banner {
+  background-color: rgba(255, 61, 0, 0.2);
+  color: #292929;
+}
+
+.error-icon {
+  color: #FF3D00;
+  background: #FFFFFF;
+  border-radius: 50%;
+  width: 24px; height: 24px;
+  display: flex; justify-content: center; align-items: center;
+  font-size: 14px;
+}
+
+.passenger-form__success-banner {
+  background-color: rgba(146, 222, 139, 0.5);
+  color: #FFFFFF;
+}
+
+.success-icon {
+  color: #8DCE87;
+  background: #FFFFFF;
+  border-radius: 50%;
+  width: 24px; height: 24px;
+  display: flex; justify-content: center; align-items: center;
+  font-size: 14px;
+}
+
+.passenger-form__next-btn {
+  background: transparent;
+  border: 1px solid #292929;
+  border-radius: 3px;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #292929;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 2;
+  background: #fff;
+}
+
+.passenger-form__next-btn:hover {
+  background: #292929;
+  color: #FFFFFF;
+}
+
+.passenger-form__delete {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #928F94;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* ДОБАВЛЯЕМ ХОВЕР */
+.passenger-form__delete:hover {
+  color: #FF3D00;
+}

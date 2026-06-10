@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F4F6;
+  color: #292929;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+html, body, #root, .App {
+  max-width: 100vw;
+  overflow-x: hidden !important;
+}
+
+.search-form__submit-btn,
+.seats-page__btn-next,
+.passengers-page__next-btn,
+.payment-page__btn,
+.order-page__btn {
+  background-color: #FFA800;
+  border: 1px solid #FFA800;
+  box-shadow: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.seats-page__btn-next,
+.passengers-page__next-btn,
+.payment-page__btn,
+.order-page__btn {
+  color: #FFFFFF;
+}
+.search-form__submit-btn {
+  color: #292929;
+}
+
+.search-form__submit-btn:hover:not(:disabled):not([class*="--disabled"]),
+.seats-page__btn-next:hover:not(:disabled):not([class*="--disabled"]),
+.passengers-page__next-btn:hover:not(:disabled):not([class*="--disabled"]),
+.payment-page__btn:hover:not(:disabled):not([class*="--disabled"]),
+.order-page__btn:hover:not(:disabled):not([class*="--disabled"]) {
+  background-color: #FFA800;
+  border-color: #FFA800;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.search-form__submit-btn:active:not(:disabled):not([class*="--disabled"]),
+.seats-page__btn-next:active:not(:disabled):not([class*="--disabled"]),
+.passengers-page__next-btn:active:not(:disabled):not([class*="--disabled"]),
+.payment-page__btn:active:not(:disabled):not([class*="--disabled"]),
+.order-page__btn:active:not(:disabled):not([class*="--disabled"]) {
+  background-color: #FFFFFF !important;
+  color: #FFA800 !important;
+  border: 1px solid #FFA800 !important;
+  box-shadow: none !important;
+  transition: none;
+}
+
+.search-form__submit-btn:disabled,
+.seats-page__btn-next--disabled,
+.passengers-page__next-btn--disabled,
+.payment-page__btn--disabled,
+.order-page__btn:disabled,
+.order-page__btn--disabled {
+  background-color: #928F94 !important;
+  border-color: #928F94 !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+}
+
+
+.btn-choose-other,
+.order-btn-change {
+  background-color: transparent;
+  border: 1px solid #292929;
+  color: #292929;
+  transition: all 0.3s;
+}
+
+.btn-choose-other:hover,
+.order-btn-change:hover {
+  background-color: transparent !important;
+  border-color: #FFA800 !important;
+  color: #FFA800 !important;
+}
+
+.btn-choose-other:active,
+.order-btn-change:active {
+  background-color: #FFA800 !important;
+  border-color: #FFA800 !important;
+  color: #292929 !important;
+  transition: none;
+}
+
+
+.sort-dropdown__item {
+  background-color: #FFFFFF;
+  color: #292929;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sort-dropdown__item:hover {
+  background-color: #FFA800 !important;
+  color: #FFFFFF !important;
+}
+
+
+.circle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #928F94;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #928F94;
+  font-size: 24px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.circle-btn:hover:not(:disabled) {
+  border-color: #FFA800 !important;
+  color: #FFA800 !important;
+}
+
+.circle-btn:active:not(:disabled) {
+  border-color: #292929 !important;
+  color: #292929 !important;
+  transition: none;
+}
+
+.circle-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+  
+  .header { position: relative !important; background-color: #292929 !important; }
+  .trains-page__hero, .inner-page-header { height: auto !important; padding-bottom: 40px !important; }
+
+  .wrapper, .trains-container { 
+    padding: 0 30px !important; 
+    box-sizing: border-box !important;
+  }
+
+  .seats-page__main,
+  .passengers-page__wrapper,
+  .order-page__wrapper,
+  .payment-page__wrapper,
+  .trains-page__layout { 
+    flex-direction: column !important;
+    padding: 30px 0 !important;
+    gap: 30px !important;
+  }
+
+  .sidebar, .filter-panel, .order-page__sidebar, .passengers-page__sidebar, .payment-page__sidebar,
+  .trains-page__sidebar,
+  .seats-page__content, [class*="page__main"], .trains-page__content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .search-form--horizontal .search-form__row { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .search-form--horizontal .search-form__group--date .search-form__inputs-wrapper { gap: 15px !important; }
+
+  .progress-bar { width: 100vw !important; margin-left: calc(-50vw + 50%); overflow-x: auto !important; }
+  .progress-bar__wrapper { width: max-content !important; padding: 0 15px; }
+}
+
+@media (max-width: 768px) {
+  
+  .wrapper, .trains-container { padding: 0 15px !important; }
+
+  .header__menu { flex-direction: column !important; gap: 10px !important; padding: 15px 0 !important; align-items: center; }
+
+  .inner-page-header__search-wrapper { padding: 20px 15px !important; }
+  .search-form--horizontal .search-form__group--city .search-form__inputs-wrapper { grid-template-columns: 1fr !important; gap: 10px !important; }
+  .search-form--horizontal .search-form__group--date .search-form__inputs-wrapper { grid-template-columns: 1fr !important; }
+  .search-form__swap-btn { transform: rotate(90deg) !important; margin: 5px auto !important; }
+  .search-form--horizontal .search-form__group--city .search-form__input-box:first-child .search-form__input { border-radius: 5px 5px 0 0 !important; }
+  .search-form--horizontal .search-form__group--city .search-form__input-box:last-child .search-form__input { border-radius: 0 0 5px 5px !important; }
+  .search-form__submit-btn { width: 100% !important; padding: 15px 0 !important; }
+
+  .trains-page__sort-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+  .sort-header__controls {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+  }
+  .sort-dropdown {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 5px !important;
+  }
+
+  .trains-page__pagination {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  .page-btn {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 18px !important;
+  }
+}
+
+
