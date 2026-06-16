@@ -298,6 +298,14 @@
 }
 
 
+@media (max-width: 1024px) {
+  .train-card__left { width: 150px; padding: 20px 10px; }
+  .train-card__right { width: 240px; padding: 20px; }
+  .train-card__center { padding: 20px; }
+  .train-card__time { font-size: 20px; }
+  .train-card__class-name { width: 60px; }
+}
+
 @media (max-width: 768px) {
   .train-card {
     flex-direction: column;
@@ -307,8 +315,9 @@
     width: 100%;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
     gap: 20px;
-    padding: 20px;
+    padding: 15px 20px;
   }
 
   .train-card__train-icon-box {
@@ -317,36 +326,10 @@
     height: 60px;
   }
 
-.train-card__main-icon-img {
-  width: 50px;
-  height: auto;
-  object-fit: contain;
-}
-
   .train-card__train-name {
     text-align: left;
     font-size: 20px;
     margin-bottom: 5px;
-  }
-
-  .train-card__center {
-    padding: 20px;
-  }
-
-  .train-card__time {
-    font-size: 20px;
-  }
-
-  .train-card__city {
-    font-size: 16px;
-  }
-
-  .train-card__station {
-    font-size: 14px;
-  }
-
-  .train-card__duration-block {
-    width: 80px;
   }
 
   .train-card__right {
@@ -357,13 +340,20 @@
   }
 
   .train-card__actions {
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 20px;
   }
 
   .train-card__btn {
+    width: auto;
+    padding: 12px 30px;
     font-size: 18px;
-    padding: 15px 0;
+  }
+
+  .train-card__class-hover-details {
+    display: none !important; 
   }
 }
 
@@ -371,8 +361,8 @@
   .train-card__direction {
     flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 15px;
+    text-align: center;
   }
 
   .train-card__time-info_left,
@@ -384,5 +374,14 @@
   .train-card__arrow-img {
     transform: rotate(90deg);
     margin: 10px 0;
+  }
+
+  .train-card__actions {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .train-card__btn {
+    width: 100%;
   }
 }

@@ -47,7 +47,6 @@ const PassengersPage = () => {
 
   return (
     <>
-      
       <section 
         className="trains-page__hero" 
         style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/header-bg-blurred.png)` }}
@@ -57,7 +56,9 @@ const PassengersPage = () => {
         </div>
       </section>
 
-      <ProgressBar currentStep={2} />
+      <div className="wrapper" style={{ margin: '40px auto' }}>
+        <ProgressBar currentStep={2} />
+      </div>
 
       <section className="passengers-page">
         <div className="passengers-page__wrapper wrapper">

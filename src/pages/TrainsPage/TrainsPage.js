@@ -82,7 +82,9 @@ const TrainsPage = () => {
         <Loader />
       ) : (
         <>
-          <ProgressBar currentStep={1} />
+          <div className="trains-container" style={{ margin: '40px auto' }}>
+            <ProgressBar currentStep={1} />
+          </div>
           
           <main className="trains-page__main">
             <div className="trains-container trains-page__layout">

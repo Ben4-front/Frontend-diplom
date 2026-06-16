@@ -202,9 +202,6 @@ html, body, #root, .App {
 
   .search-form--horizontal .search-form__row { grid-template-columns: 1fr !important; gap: 20px !important; }
   .search-form--horizontal .search-form__group--date .search-form__inputs-wrapper { gap: 15px !important; }
-
-  .progress-bar { width: 100vw !important; margin-left: calc(-50vw + 50%); overflow-x: auto !important; }
-  .progress-bar__wrapper { width: max-content !important; padding: 0 15px; }
 }
 
 @media (max-width: 768px) {

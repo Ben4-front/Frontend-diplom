@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updatePassenger, removePassenger } from '../../store/slices/passengersSlice';
 import './PassengerForm.css';
@@ -12,21 +12,17 @@ const PassengerForm = ({ id, number }) => {
   const [isOpen, setIsOpen] = useState(number === 1);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  if (!passenger) return null; 
+  const docValue = passenger?.documentNumber || '';
+  const passportSeries = passenger?.documentType === 'passport' ? docValue.slice(0, 4) : '';
+  const passportNumber = passenger?.documentType === 'passport' ? docValue.slice(4, 10) : docValue;
 
   const nameRegex = /^[А-Яа-яA-Za-z\- ]+$/; 
   const birthCertRegex = /^[IVXLCDM]{1,4}[-\s]?[А-Яа-я]{2}[-\s]?\d{6}$/i;
 
-  const docValue = passenger.documentNumber || '';
-  const passportSeries = passenger.documentType === 'passport' ? docValue.slice(0, 4) : '';
-  const passportNumber = passenger.documentType === 'passport' ? docValue.slice(4, 10) : docValue;
-
-  const handleChange = (field, value) => {
-    dispatch(updatePassenger({ id, field, value }));
-  };
-
   const getErrors = () => {
     const errors = {};
+    if (!passenger) return errors;
+
     if (!passenger.lastName || !nameRegex.test(passenger.lastName)) errors.lastName = true;
     if (!passenger.firstName || !nameRegex.test(passenger.firstName)) errors.firstName = true;
     if (!passenger.birthDate) errors.birthDate = true;
@@ -42,13 +38,26 @@ const PassengerForm = ({ id, number }) => {
   const errors = getErrors();
   const hasErrors = Object.keys(errors).length > 0;
 
+  useEffect(() => {
+    if (!passenger) return;
+
+    if (!hasErrors && !passenger.isValid) {
+      dispatch(updatePassenger({ id, isValid: true }));
+    } else if (hasErrors && passenger.isValid) {
+      dispatch(updatePassenger({ id, isValid: false }));
+    }
+  }, [hasErrors, passenger?.isValid, dispatch, id, passenger]);
+
+  if (!passenger) return null; 
+
+  const handleChange = (field, value) => {
+    dispatch(updatePassenger({ id, field, value }));
+  };
+
   const handleSubmit = () => {
     setIsSubmitted(true);
     if (!hasErrors) {
-      dispatch(updatePassenger({ id, isValid: true }));
-      setIsOpen(false); 
-    } else {
-      dispatch(updatePassenger({ id, isValid: false }));
+      setIsOpen(false);
     }
   };
 
@@ -229,7 +238,7 @@ const PassengerForm = ({ id, number }) => {
               </div>
             )}
             
-            {isSubmitted && !hasErrors && (
+            {!hasErrors && passenger.isValid && (
               <div className="passenger-form__success-banner">
                 <span className="success-icon">✔</span>
                 Готово
@@ -241,7 +250,7 @@ const PassengerForm = ({ id, number }) => {
               className="passenger-form__next-btn"
               onClick={handleSubmit}
             >
-              Следующий пассажир
+              {hasErrors ? 'Проверить данные' : 'Готово'}
             </button>
           </div>
 

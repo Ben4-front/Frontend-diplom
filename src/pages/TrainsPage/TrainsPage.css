@@ -186,3 +186,17 @@
   flex-direction: column;
   gap: 30px; 
 }
+
+@media (max-width: 1024px) {
+  .trains-container,
+  .wrapper {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .trains-container,
+  .wrapper {
+    padding: 0 15px;
+  }
+}

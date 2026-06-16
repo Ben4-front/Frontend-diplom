@@ -21,7 +21,6 @@ const CarriageMap = ({ coach, totalTickets, trainType }) => {
   const seatsList = coach.seats;
   const wagonNumber = name.replace(/\D/g, '') || '07';
 
-  // Проверка, выбрано ли место в ЭТОМ направлении
   const isSelected = (seatIndex) => {
     return selectedSeats.some(
       (s) => s.coachId === _id && s.seatNumber === seatIndex && s.trainType === trainType
@@ -72,7 +71,6 @@ const CarriageMap = ({ coach, totalTickets, trainType }) => {
     );
   };
 
-  // 1. РЕНДЕР КУПЕ
   const renderCoupeSeats = () => {
     const compartments = [];
     for (let i = 0; i < 8; i++) {
